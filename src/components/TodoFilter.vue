@@ -28,7 +28,7 @@ export default {
 <style>
 .filters {
   display: flex;
-  margin: 24px 2px;
+  margin: px 2px;
   color: #c0c2ce;
   font-size: 14px;
   cursor: pointer;

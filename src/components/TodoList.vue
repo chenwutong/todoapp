@@ -20,7 +20,10 @@ export default {
 <style>
 .todo-list {
   display: grid;
-  row-gap: 14px;
+  row-gap: 0.3px;
+  position: relative;
+  
+  
 }
 
 </style>

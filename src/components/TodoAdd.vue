@@ -8,7 +8,9 @@
     />
     <button @click="emitAddTodo">
       <i class="plus"></i>
+       
     </button>
+    
   </div>
 </template>
   
@@ -22,15 +24,20 @@ export default {
 };
 function useEmitAddTodo(tid, emit) {
   const todoContent = ref("");
-
+  console.log(todoContent)
   const emitAddTodo = () => {
-    const todo = {
+    if (todoContent.value=="") {
+      return 0;
+    } else {
+      const todo = {
       id: tid,
       content: todoContent.value,
       completed: false,
     };
     emit("add-todo", todo);
     todoContent.value = "";
+    }
+    
   };
   return {
     todoContent,
@@ -43,23 +50,25 @@ function useEmitAddTodo(tid, emit) {
 /* 添加框 */
 .input-add {
   position: relative;
+  height: 70px;
   display: flex;
   align-items: center;
 }
 .input-add input {
   padding: 16px 52px 16px 18px;
-  border-radius: 48px;
+  border-radius: 12px;
   border: none;
   outline: none;
-  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.08);
+  /* box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.08); */
   width: 100%;
   font-size: 16px;
   color: #626262;
+  background: white;
 }
 .input-add button {
   width: 46px;
   height: 46px;
-  border-radius: 50%;
+  border-radius: 48px;
   background: linear-gradient(#c0a5f3, #7f95f7);
   border: none;
   color: white;
