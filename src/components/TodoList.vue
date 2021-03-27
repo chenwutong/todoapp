@@ -1,29 +1,33 @@
 <template>
-  <div class="todo-list">
-      <todo-list-item v-for="todo in todos" 
-      :key="todo.id" 
-      :todo-item="todo"
-      @change-state="todo.completed = $event.target.checked"
+  
+    <div class="todo-list">
+      <todo-list-item
+        v-for="todo in todos"
+        :key="todo.id"
+        :todo-item="todo"
+        @change-state="todo.completed = $event.target.checked"
       ></todo-list-item>
-  </div>
+    </div>
 </template>
 
 <script>
-import TodoListItem from './TodoListItem.vue';
+import TodoListItem from "./TodoListItem.vue";
 export default {
   components: { TodoListItem },
   name: "TodoList",
-  props:["todos"],
-  };
+  props: ["todos"],
+};
 </script>
 
 <style>
+.todo-menu {
+  position: relative;
+  height: 70px;
+}
 .todo-list {
   display: grid;
   row-gap: 0.3px;
+  
   position: relative;
-  
-  
 }
-
 </style>

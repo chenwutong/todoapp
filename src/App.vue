@@ -12,11 +12,12 @@
         <todo-show></todo-show>
         
           <todo-add :tid="todos.length" @add-todo="addTodo"></todo-add>
+          
+          <todo-list :todos="filteredTodos"></todo-list>
           <todo-filter
             :selected="filter"
             @change-filter="filter = $event"
           ></todo-filter>
-          <todo-list :todos="filteredTodos"></todo-list>
         </el-main>
       </el-container>
     </el-container>
@@ -76,7 +77,6 @@ export default {
   margin: 2px;
   padding: 0;
   background-color: rgb(245, 246, 252);
-
   font-family: Helvetica, "PingFang SC", "Microsoft Yahei", sans-serif;
 }
 /* 整个页面 */

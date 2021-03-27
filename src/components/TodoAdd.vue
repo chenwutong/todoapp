@@ -66,14 +66,14 @@ function useEmitAddTodo(tid, emit) {
   background: white;
 }
 .input-add button {
-  width: 46px;
-  height: 46px;
+  width: 40px;
+  height: 40px;
   border-radius: 48px;
   background: linear-gradient(#c0a5f3, #7f95f7);
   border: none;
   color: white;
   position: absolute;
-  right: 0px;
+  right: 1px;
   cursor: pointer;
   outline: none;
 }
