@@ -1,18 +1,19 @@
 <template>
   <main>
     <el-container>
-      <el-header >
+      <el-header>
         <div class="topmenu"></div>
       </el-header>
       <el-container>
-        <el-aside
-        width="250px">
-          Aside</el-aside>
-        <el-main>
-        <todo-show></todo-show>
-        
-          <todo-add :tid="todos.length" @add-todo="addTodo"></todo-add>
+        <el-aside width="250px">
           
+          <todofile></todofile>
+        </el-aside>
+        <el-main>
+          <todo-show></todo-show>
+
+          <todo-add :tid="todos.length" @add-todo="addTodo"></todo-add>
+
           <todo-list :todos="filteredTodos"></todo-list>
           <todo-filter
             :selected="filter"
@@ -51,11 +52,12 @@ import TodoFilter from "./components/TodoFilter.vue";
 import TodoList from "./components/TodoList.vue";
 import useTodos from "./composables/useTodos";
 import useFilteredTodos from "./composables/useFilteredTodos";
-import todoShow from"./components/todoShow";
-import TodoShow from './components/todoShow.vue';
+import todoShow from "./components/todoShow";
+import TodoShow from "./components/todoShow.vue";
+import Todofile from "./components/todofile.vue";
 export default {
   name: "App",
-  components: { TodoAdd, TodoFilter, TodoList, TodoShow },
+  components: { TodoAdd, TodoFilter, TodoList, TodoShow, Todofile },
   setup() {
     const { todos, addTodo } = useTodos();
     const { filter, filteredTodos } = useFilteredTodos(todos);
@@ -81,21 +83,18 @@ export default {
 }
 /* 整个页面 */
 
-
-
 /* 标题 */
 h1 {
   margin: 24px 0;
   font-size: 28px;
   color: #414873;
 }
-.jiange{
+.jiange {
   height: 10px;
-  background-color:rgb(245, 246, 252);
-
+  background-color: rgb(245, 246, 252);
 }
 .el-header {
-  margin:3px;
+  margin: 3px;
   width: 99%;
   max-width: 100%;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
@@ -104,30 +103,31 @@ h1 {
   background-color: rgb(245, 246, 252);
   text-align: center;
   line-height: 120px;
-  height:90px
+  height: 90px;
 }
 
 .el-aside {
-  margin:3px;
+  
+  margin: 3px;
   width: 100%;
   max-width: 100%;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
-  padding: 50px 100px;
+  
   background-color: rgb(245, 246, 252);
   text-align: center;
   height: 600px;
 }
 
 .el-main {
-  margin:3px;
+  margin: 3px;
   color: #333;
   width: 100%;
   max-width: 100%;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
   padding: 200px 160px;
-  background-color:rgb(245, 246, 252);
+  background-color: rgb(245, 246, 252);
   text-align: center;
   height: 600px;
 }
