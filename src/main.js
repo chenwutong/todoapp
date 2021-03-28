@@ -1,3 +1,4 @@
+import './plugins/axios'
 import { createApp } from 'vue'
 import App from './App.vue'
 //Vue.use(contentmenu)
@@ -14,6 +15,4 @@ import ElementPlus from 'element-plus';
 import 'element-plus/lib/theme-chalk/index.css';
 const app = createApp(App)
 app.use(ElementPlus)
-
-
 app.mount('#app')

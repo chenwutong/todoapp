@@ -1,9 +1,5 @@
 <template>
   <div class="show">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
   </div>
 </template>
 
@@ -13,7 +9,6 @@ export default {};
 
 <style>
 .show {
-
   margin: 0px;
   border-radius: 12px;
   border: none;
